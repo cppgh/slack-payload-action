@@ -1,0 +1,10 @@
+name: Notify Slack
+description: Notify Slack
+inputs:
+  # awkwardly, this does not seem to be exposed directly via the npm library
+  job-status:
+    description: Job status
+    required: true
+runs:
+  using: node16
+  main: src/index.js
