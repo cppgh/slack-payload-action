@@ -22,11 +22,11 @@ const message = `
 `.replace(/\n+/g, ' ').replace(/ +/g, ' ');
 console.log(github.context);
 const payload = {
+    color: jobStatus === SUCCESS_STATUS ? 'good' : 'danger',
     text: `Build result for ${github.context.repo.repo}`,
     blocks: [
         {
             type: 'section',
-            color: jobStatus === SUCCESS_STATUS ? 'good' : 'danger',
             text: {
                 type: 'mrkdwn',
                 text: message
