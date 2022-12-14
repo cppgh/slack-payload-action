@@ -20,6 +20,7 @@ const message = `
     ${jobStatus}
     [<${github.context.serverUrl}/${github.context.repo.owner}/${github.context.repo.repo}/actions/runs/${github.context.runId}|result>]
 `.replace(/\n+/g, ' ').replace(/ +/g, ' ');
+core.setFailed('hooha');
 const payload = {
     attachments: [
         {
