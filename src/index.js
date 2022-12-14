@@ -25,17 +25,7 @@ const payload = {
         {
             color: jobStatus === SUCCESS_STATUS ? 'good' : 'danger',
             text: message
-            // blocks: [
-            //     {
-            //         type: 'section',
-            //         text: {
-            //             type: 'mrkdwn',
-            //             text: message
-            //         }
-            //     }
-            // ]
         }
-    ]//,
-    // text: `Build result for ${github.context.repo.repo}`,
+    ]
 };
 core.setOutput('payload', JSON.stringify(payload));
