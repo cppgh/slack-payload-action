@@ -20,18 +20,22 @@ const message = `
     ${jobStatus}
     [<${github.context.serverUrl}/${github.context.repo.owner}/${github.context.repo.repo}/actions/runs/${github.context.runId}|result>]
 `.replace(/\n+/g, ' ').replace(/ +/g, ' ');
-console.log(github.context);
 const payload = {
-    color: jobStatus === SUCCESS_STATUS ? 'good' : 'danger',
-    text: `Build result for ${github.context.repo.repo}`,
-    blocks: [
+    attachments: [
         {
-            type: 'section',
-            text: {
-                type: 'mrkdwn',
-                text: message
-            }
+            color: jobStatus === SUCCESS_STATUS ? 'good' : 'danger',
+            text: "bumbus"
+            // blocks: [
+            //     {
+            //         type: 'section',
+            //         text: {
+            //             type: 'mrkdwn',
+            //             text: message
+            //         }
+            //     }
+            // ]
         }
-    ]
+    ]//,
+    // text: `Build result for ${github.context.repo.repo}`,
 };
 core.setOutput('payload', JSON.stringify(payload));
