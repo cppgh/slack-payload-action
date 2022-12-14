@@ -26,10 +26,10 @@ const payload = {
     blocks: [
         {
             type: 'section',
+            color: jobStatus === SUCCESS_STATUS ? 'good' : 'danger',
             text: {
                 type: 'mrkdwn',
-                text: message,
-                color: jobStatus === SUCCESS_STATUS ? 'good' : 'danger'
+                text: message
             }
         }
     ]
