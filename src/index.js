@@ -15,7 +15,7 @@ const headCommitMessage = ((headCommit && headCommit.message) || '').split("\n")
 const jobStatus = core.getInput('job-status');
 
 const message = `
-    On *${eventPayload.repository.name}* ran *${github.context.workflow}*
+    On *${eventPayload.repository.name}* we ran *${github.context.workflow}*
     (${pullRequestTitle || headCommitMessage}) for ${headCommitAuthor}:
     ${jobStatus}
     [<${github.context.serverUrl}/${github.context.repo.owner}/${github.context.repo.repo}/actions/runs/${github.context.runId}|result>]
