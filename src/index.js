@@ -24,7 +24,7 @@ const payload = {
     attachments: [
         {
             color: jobStatus === SUCCESS_STATUS ? 'good' : 'danger',
-            text: "bumbus"
+            text: message
             // blocks: [
             //     {
             //         type: 'section',
