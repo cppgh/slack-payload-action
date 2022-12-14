@@ -1,6 +1,8 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 
+const SUCCESS_STATUS = 'success';
+
 const eventPayload = github.context.payload;
 const pullRequest = eventPayload.pull_request;
 const pullRequestTitle = pullRequest && pullRequest.title;
@@ -23,10 +25,11 @@ const payload = {
     text: `Build result for ${github.context.repo.repo}`,
     blocks: [
         {
-            type: "section",
+            type: 'section',
             text: {
-                type: "mrkdwn",
-                text: message
+                type: 'mrkdwn',
+                text: message,
+                color: jobStatus === SUCCESS_STATUS ? 'good' : 'danger'
             }
         }
     ]
