@@ -5,6 +5,9 @@ inputs:
   job-status:
     description: Job status
     required: true
+  workflow:
+    description: Workflow to describe
+    required: false
 runs:
   using: node16
   main: src/index.js
